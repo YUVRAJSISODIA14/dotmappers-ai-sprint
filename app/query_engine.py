@@ -75,7 +75,8 @@ def format_answer(question: str, columns, rows) -> str:
     prompt = f"""Question: {question}
 Query result — columns: {columns}, rows: {rows}
 
-Answer the question in one plain sentence, using only the numbers given above. Do not mention SQL or databases."""
+Answer the question in one plain sentence, using only the numbers given above. Round any decimal numbers to 2 decimal places. Do not mention SQL or databases."""
+
     return ask_llm(prompt=prompt).strip()
 
 
